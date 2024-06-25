@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .bill {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .bill-header, .bill-body {
+            padding: 20px;
+        }
+        .bill-header {
+            background-color: #f2f2f2;
+            border-bottom: 1px solid #ccc;
+        }
+        .bill-header h2 {
+            margin: 0;
+            text-align: center;
+        }
+        .bill-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .bill-table th, .bill-table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .bill-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<div class="bill">
+    <div class="bill-header">
+        <h2>AssurEase</h2>
+    </div>
+    <div class="bill-body">
+        <h2>Ref° facture:  {{facture.id}} </h2>
+        <h4> Client: {{facture.client}}</h4>
+
+        <table class="bill-table">
+            <tr>
+                <th>Couverture</th>
+                <th>Engagement</th>
+                <th>De</th>
+                <th>Jusqu'a</th>
+
+                <th>Prix</th>
+            </tr>
+            <tr>
+                <td>{{contrat.couverture}}</td>
+                <td>{{contrat.engagement}} Mois</td>
+                <td>{{contrat.debut|date('d-m-Y')}}</td>
+                <td>{{contrat.fin|date('d-m-Y')}}</td>
+                <td>{{contrat.prix}} TND</td>
+
+            </tr>
+
+            <tr>
+                <td></td><td></td><td></td>
+                <td>Tva:</td>
+                <td>19 %</td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td>  <td>Promotion de:</td>
+                <td>{{facture.tva}} %</td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td>    <td>Totale:</td>
+                <td>{{facture.totale}} TND</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

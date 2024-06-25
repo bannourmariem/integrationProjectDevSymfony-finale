@@ -1,0 +1,43 @@
+{{ form_start(form) }}
+
+
+<div class="form-group row">
+	<label class="col-sm-2 col-form-label">{{ form_label(form.client) }}
+	</label>
+	<div class="col-sm-10">
+		{{ form_widget(form.client, { 'attr': {'class': 'form-control form-control-capitalize'} }) }}
+	</div>
+</div>
+<div class="form-group row">
+	<label class="col-sm-2 col-form-label">{{ form_label(form.couverture) }}
+	</label>
+	<div class="col-sm-10">
+		{{ form_widget(form.couverture, { 'attr': {'class': 'form-control form-control-capitalize'} }) }}
+	</div>
+</div>
+
+<div class="form-group row">
+	<label class="col-sm-2 col-form-label">{{ form_label(form.debut) }}
+	</label>
+	<div class="col-sm-10">
+		{{ form_widget(form.debut, { 'attr': {'class': 'form-control form-control-capitalize'} }) }}
+	</div>
+</div>
+<div class="form-group row">
+	<label class="col-sm-2 col-form-label">{{ form_label(form.prix) }}
+	</label>
+	<div class="col-sm-10">
+		{{ form_widget(form.prix, { 'attr': {'class': 'form-control form-control-capitalize'} }) }}
+	</div>
+</div><div class="form-group row">
+	<label class="col-sm-2 col-form-label">{{ form_label(form.engagement) }}
+	</label>
+	<div class="col-sm-10">
+		{{ form_widget(form.engagement, { 'attr': {'class': 'form-control form-control-capitalize'} }) }}
+	</div>
+</div> <button class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
+
+</div>
+
+
+{{ form_end(form) }}

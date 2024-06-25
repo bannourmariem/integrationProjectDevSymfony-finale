@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offre
+{% endblock %}
+
+{% block body %}
+<h1>Offre</h1>
+
+
+
+
+<div class="col-sm-10">
+    <div class="card">
+        <div class="card-header">
+            <h5>{{offre.titre}} | {{ offre.assurance }}</h5>
+            <div class="card-header-right">
+                {{ offre.emailAssurance }}
+                {{ offre.numAssurance }}
+            </div>
+        </div>
+        <div class="card-block">
+            <p>
+                {{ offre.description }}
+
+            </p>
+        </div>
+        <div class="card-footer">
+            Email : {{ offre.emailAssurance }} <br>
+            Télephone : {{ offre.numAssurance }}
+        </div>
+    </div>
+</div>
+ 
+
+
+<div class="row">
+    
+    <div class="col-3">
+
+        <a class='btn btn-secondary' href="{{ path('app_offre_edit', {'id': offre.id}) }}">edit</a>
+    </div>
+
+    {{ include('offre/_delete_form.html.twig') }}
+</div>
+{% endblock %}

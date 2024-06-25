@@ -1,0 +1,149 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Contrat
+{% endblock %}
+
+{% block body %}
+<style>
+	.input-file {
+		display: none;
+	}
+
+	/* Styliser le bouton de téléchargement */
+	.custom-button {
+		background-color: #dfdfdf;
+		/* Couleur de fond du bouton */
+		color: #fff;
+		border: 1px solid #ccc;
+		/* Espacement intérieur du bouton */
+		border: none;
+		/* Supprimer la bordure */
+		border-radius: 5px;
+		/* Coins arrondis */
+		cursor: pointer;
+		padding: 75px;
+		/* Curseur pointeur au survol */
+	}
+
+	/* Styliser le texte du bouton */
+	.custom-button-label {
+		font-size: 16px;
+		/* Taille de police */
+		font-weight: bold;
+		/* Gras */
+	}
+</style>
+
+
+<h1></h1>
+<div class="pcoded-inner-content">
+	<div class="main-body">
+		<div class="page-body ">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="card p-5">
+							<div class="app-wrapper">
+								<div class="container-xl">
+ 									<div class="row justify-content-center">
+										<div class="app-card col-md-14 col-14 ">
+											<br>
+											<div class="row">
+												<div class="col-4">
+ 													<h3 class="text-muted mt-99 ng-star-inserted" style="text-align: center; font-size: 34px"></h3>
+													<h3 class="text-muted mt-99 ng-star-inserted" style="text-align: center; font-size: 34px"></h3>
+												</div>
+
+												<div class="col-4"></div>
+												<div class="col-4">
+
+													<h3 class="text-muted text-center">
+														AssureEase
+
+													</h3>
+													<h3 class="text-muted text-center" style="font-size: 34px">
+														<img class="img-80 img-radius" src="{{asset('assets/images/logo_off.png')}}" alt="logo">
+
+													</h3>
+												</div>
+											</div>
+											<h1 class="text-center">
+												<b>
+													<i>Contrat d'Assurance</i>
+												</b>
+											</h1>
+											<div class="container">
+
+												<div class="card-body">
+													 
+													<p>
+														<b>
+															<i>{{contrat.client|upper()}}</i>
+														</b>
+														Assurances s'engage
+																																																																																																																																																																																																																																																											à
+																																																																																																																																																																																																																																																											couvrir
+																																																																																																																																																																																																																																																											une assurance
+																																																																																																																																																																																																																																																											de type
+														<b>
+															<i>{{contrat.couverture |upper()}}</i>
+														</b>
+														la dette d'une
+																																																																																																																																																																																																																																																											somme de
+														<b>{{contrat.prix}}
+															TND</b>
+														accordée à Mme/Mr
+														<b>{{contrat.client|upper()}}</b>
+														de
+														<b>
+															<i>{{contrat.debut|date('d-m-Y')}}</i>
+														</b>
+														Jusqu'à
+														<b>
+															<i>{{contrat.fin|date('d-m-Y')}}</i>
+														</b>.
+													</p>
+												</pd<m>En cas d'incapacité de Mme/Mr
+												<b>
+													<i>{{contrat.client|upper()}}</i>
+												</b>
+												à payer
+																																																																																																																																																																																																																										la mensualité,
+												 
+												prendra la responsabilité de
+																																																																																																																																																																																																																										rembourser la Communauté Prêt et Finance.
+											</p>
+											<p>Ce contrat se renouvelle automatiquement. Si vous souhaitez
+																																																																																																																																																																																																																											résilier l'assurance, vous devez effectuer une déclaration de
+																																																																																																																																																																																																																											résiliation avant le mois de renouvellement</p>
+											<p>Mme/MR
+												<b>
+													<i>{{contrat.client|upper()}}</i>
+												</b>
+												devra payer une
+																																																																																																																																																																																																																											prime
+																																																																																																																																																																																																																											d'assurance de
+												<b>
+													<i>1000 TND</i>
+												</b>
+												afin de garantir son prêt
+																																																																																																																																																																																																																											en cas de perte
+																																																																																																																																																																																																																											d'emploi ou de décès.
+											</p>
+
+											<p>En foi de quoi, ce présent contrat est établi pour servir et
+																																																																																																																																																																																																																											valoir ce que de droit.</p>
+				</div>
+									</div>
+
+
+ 
+
+
+									<br><br>
+ 
+	
+<a  class="btn btn-primary" href="/facture/new/contrat/{{contrat.id}}">génerer une facture</a>
+				{% endblock %}
+ 
